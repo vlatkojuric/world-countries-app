@@ -15,17 +15,19 @@ function App() {
 
   return (
     <div className="App">
-      {countries.map((country) => (
-        <Country
-          name={country.name.common}
-          flag={country.flags.png}
-          alt={country.flags.alt}
-          key={country.cca2}
-          region={country.region}
-          population={country.population}
-          capital={country.capital}
-        />
-      ))}
+      <div className="countryDisplay">
+        {countries.map((country) => (
+          <Country
+            name={country.name.common}
+            flag={country.flags.png}
+            alt={country.flags.alt}
+            key={country.cca2}
+            region={country.region}
+            population={country.population}
+            capital={country.capital}
+          />
+        ))}
+      </div>
     </div>
   );
 }

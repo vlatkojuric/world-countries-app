@@ -8,7 +8,7 @@ export default function Country({
 }) {
   return (
     <div>
-      <img src={flag} alt={alt} />
+      <img src={flag} alt={alt} width={300} height={200} />
       <h3>{name}</h3>
       <p>{region}</p>
       <p>{population}</p>
