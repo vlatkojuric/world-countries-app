@@ -1,32 +1,22 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import axios from "axios";
 import Country from "./components/Country";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 function App() {
-  const [countries, setCountries] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://restcountries.com/v3.1/all").then((response) => {
-      setCountries(response.data);
-      console.log(response.data);
-    });
-  }, []);
+  const client = new QueryClient({
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+      },
+    },
+  });
 
   return (
     <div className="App">
       <div className="countryDisplay">
-        {countries.map((country) => (
-          <Country
-            name={country.name.common}
-            flag={country.flags.png}
-            alt={country.flags.alt}
-            key={country.cca2}
-            region={country.region}
-            population={country.population}
-            capital={country.capital}
-          />
-        ))}
+        <QueryClientProvider client={client}>
+          <Country />
+        </QueryClientProvider>
       </div>
     </div>
   );
