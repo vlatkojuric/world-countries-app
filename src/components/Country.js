@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 export default function Country() {
   const [searchValue, setSearchValue] = useState("");
   const [countries, setCountries] = useState([]);
+  const [continent, setContinent] = useState("");
+
   const { data, isLoading, isError } = useQuery({
     queryKey: ["country-data"],
     queryFn: async () => {
@@ -35,7 +37,22 @@ export default function Country() {
         <input
           type="text"
           onChange={(event) => setSearchValue(event.target.value)}
+          className="searchInput"
         />
+
+        <select>
+          <option
+            defaultValue={continent}
+            onChange={(event) => setContinent(event.target.value)}
+          >
+            Filter by Region
+          </option>
+          <option value="Africa">Africa</option>
+          <option value="America">America</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </select>
       </div>
 
       <div className="countryDisplay">

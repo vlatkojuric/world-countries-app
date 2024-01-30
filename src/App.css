@@ -7,3 +7,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.searchInput {
+  margin-bottom: 1%;
+  height: 30px;
+  width: 25%;
+}
