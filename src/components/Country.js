@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 export default function Country() {
   const [searchValue, setSearchValue] = useState("");
   const [countries, setCountries] = useState([]);
-  const [continent, setContinent] = useState("");
+
+  const [sortByContinent, setSortByContinent] = useState("");
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["country-data"],
@@ -31,6 +32,22 @@ export default function Country() {
     country.name.common.toLowerCase().includes(searchValue.toLowerCase())
   );
 
+  const filterByAfrica = countries?.filter(
+    (country) => country.region === "Africa"
+  );
+  const filterByAmerica = countries?.filter(
+    (country) => country.region === "Americas"
+  );
+  const filterByAsia = countries?.filter(
+    (country) => country.region === "Asia"
+  );
+  const filterByEurope = countries?.filter(
+    (country) => country.region === "Europe"
+  );
+  const filterByOceania = countries?.filter(
+    (country) => country.region === "Oceania"
+  );
+
   return (
     <div>
       <div>
@@ -40,37 +57,129 @@ export default function Country() {
           className="searchInput"
         />
 
-        <select>
-          <option
-            defaultValue={continent}
-            onChange={(event) => setContinent(event.target.value)}
-          >
-            Filter by Region
-          </option>
+        <select
+          defaultValue={sortByContinent}
+          onChange={(event) => setSortByContinent(event.target.value)}
+        >
+          <option value="Filter by Region">Filter by Region</option>
+
           <option value="Africa">Africa</option>
-          <option value="America">America</option>
+          <option value="Americas">Americas</option>
           <option value="Asia">Asia</option>
           <option value="Europe">Europe</option>
           <option value="Oceania">Oceania</option>
         </select>
+
+        {sortByContinent === "Africa" && (
+          <div className="countryDisplay">
+            {filterByAfrica.map((country) => (
+              <div key={country.cca2}>
+                <img
+                  src={country.flags.png}
+                  alt={country.flags.alt}
+                  height={200}
+                  width={300}
+                />
+                <h3>{country.name.common}</h3>
+                <p>{country.region}</p>
+                <p>{country.population}</p>
+                <p>{country.capital}</p>
+              </div>
+            ))}
+          </div>
+        )}
+        {sortByContinent === "Americas" && (
+          <div className="countryDisplay">
+            {filterByAmerica.map((country) => (
+              <div key={country.cca2}>
+                <img
+                  src={country.flags.png}
+                  alt={country.flags.alt}
+                  height={200}
+                  width={300}
+                />
+                <h3>{country.name.common}</h3>
+                <p>{country.region}</p>
+                <p>{country.population}</p>
+                <p>{country.capital}</p>
+              </div>
+            ))}
+          </div>
+        )}
+        {sortByContinent === "Asia" && (
+          <div className="countryDisplay">
+            {filterByAsia.map((country) => (
+              <div key={country.cca2}>
+                <img
+                  src={country.flags.png}
+                  alt={country.flags.alt}
+                  height={200}
+                  width={300}
+                />
+                <h3>{country.name.common}</h3>
+                <p>{country.region}</p>
+                <p>{country.population}</p>
+                <p>{country.capital}</p>
+              </div>
+            ))}
+          </div>
+        )}
+        {sortByContinent === "Europe" && (
+          <div className="countryDisplay">
+            {filterByEurope.map((country) => (
+              <div key={country.cca2}>
+                <img
+                  src={country.flags.png}
+                  alt={country.flags.alt}
+                  height={200}
+                  width={300}
+                />
+                <h3>{country.name.common}</h3>
+                <p>{country.region}</p>
+                <p>{country.population}</p>
+                <p>{country.capital}</p>
+              </div>
+            ))}
+          </div>
+        )}
+        {sortByContinent === "Oceania" && (
+          <div className="countryDisplay">
+            {filterByOceania.map((country) => (
+              <div key={country.cca2}>
+                <img
+                  src={country.flags.png}
+                  alt={country.flags.alt}
+                  height={200}
+                  width={300}
+                />
+                <h3>{country.name.common}</h3>
+                <p>{country.region}</p>
+                <p>{country.population}</p>
+                <p>{country.capital}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
-      <div className="countryDisplay">
-        {filterCountries?.map((country) => (
-          <div key={country.cca2}>
-            <img
-              src={country.flags.png}
-              alt={country.flags.alt}
-              height={200}
-              width={300}
-            />
-            <h3>{country.name.common}</h3>
-            <p>{country.region}</p>
-            <p>{country.population}</p>
-            <p>{country.capital}</p>
-          </div>
-        ))}
-      </div>
+      {!sortByContinent && (
+        <div className="countryDisplay">
+          {filterCountries?.map((country) => (
+            <div key={country.cca2}>
+              <img
+                src={country.flags.png}
+                alt={country.flags.alt}
+                height={200}
+                width={300}
+              />
+              <h3>{country.name.common}</h3>
+              <p>{country.region}</p>
+              <p>{country.population}</p>
+              <p>{country.capital}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
