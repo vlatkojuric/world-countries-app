@@ -33,42 +33,74 @@ export default function Country() {
   );
 
   const filterByAfrica = countries?.filter(
-    (country) => country.region === "Africa"
+    (country) =>
+      country.region === "Africa" &&
+      country.name.common.toLowerCase().includes(searchValue.toLowerCase())
   );
   const filterByAmerica = countries?.filter(
-    (country) => country.region === "Americas"
+    (country) =>
+      country.region === "Americas" &&
+      country.name.common.toLowerCase().includes(searchValue.toLowerCase())
   );
   const filterByAsia = countries?.filter(
-    (country) => country.region === "Asia"
+    (country) =>
+      country.region === "Asia" &&
+      country.name.common.toLowerCase().includes(searchValue.toLowerCase())
   );
   const filterByEurope = countries?.filter(
-    (country) => country.region === "Europe"
+    (country) =>
+      country.region === "Europe" &&
+      country.name.common.toLowerCase().includes(searchValue.toLowerCase())
   );
   const filterByOceania = countries?.filter(
-    (country) => country.region === "Oceania"
+    (country) =>
+      country.region === "Oceania" &&
+      country.name.common.toLowerCase().includes(searchValue.toLowerCase())
   );
 
   return (
     <div>
       <div>
-        <input
-          type="text"
-          onChange={(event) => setSearchValue(event.target.value)}
-          className="searchInput"
-        />
+        <div className="inputSelectTop">
+          <input
+            type="text"
+            value={searchValue}
+            onChange={(event) => setSearchValue(event.target.value)}
+            className="searchInput"
+          />
 
-        <select
-          defaultValue={sortByContinent}
-          onChange={(event) => setSortByContinent(event.target.value)}
-        >
-          <option value="Filter by Region">Filter by Region</option>
+          <select
+            className="selectOption"
+            defaultValue={sortByContinent}
+            onChange={(event) => setSortByContinent(event.target.value)}
+          >
+            <option value="Filter by Region">Filter by Region</option>
+            <option value="Africa">Africa</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Europe">Europe</option>
+            <option value="Oceania">Oceania</option>
+          </select>
+        </div>
 
-          <option value="Africa">Africa</option>
-          <option value="Americas">Americas</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-        </select>
+        {sortByContinent === "Filter by Region" && (
+          <div className="countryDisplay">
+            {filterCountries.map((country) => (
+              <div key={country.cca2}>
+                <img
+                  src={country.flags.png}
+                  alt={country.flags.alt}
+                  height={200}
+                  width={300}
+                />
+                <h3>{country.name.common}</h3>
+                <p>{country.region}</p>
+                <p>{country.population}</p>
+                <p>{country.capital}</p>
+              </div>
+            ))}
+          </div>
+        )}
 
         {sortByContinent === "Africa" && (
           <div className="countryDisplay">
