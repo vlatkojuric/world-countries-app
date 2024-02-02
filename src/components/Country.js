@@ -1,24 +1,27 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Country() {
   const [searchValue, setSearchValue] = useState("");
-  const [countries, setCountries] = useState([]);
+  // const [countries, setCountries] = useState([]);
 
   const [sortByContinent, setSortByContinent] = useState("");
 
   const { data, isLoading, isError } = useQuery({
     queryKey: ["country-data"],
     queryFn: async () => {
-      return axios
-        .get("https://restcountries.com/v3.1/all")
-        .then((response) => response.data);
+      const response = await axios.get("https://restcountries.com/v3.1/all");
+      return response.data;
+
+      // .then((response) => response.data);
     },
   });
-  useEffect(() => {
-    setCountries(data);
-  }, [data]);
+
+  // useEffect(() => {
+  //   setCountries(data);
+  // }, [data]);
+  // console.log(typeof data);
 
   if (isError) {
     return <h1>Sorry,data can not be loaded at this time</h1>;
@@ -27,6 +30,7 @@ export default function Country() {
   if (isLoading) {
     return <h1>Data is loading...</h1>;
   }
+  const countries = data;
 
   const filterCountries = countries?.filter((country) =>
     country.name.common.toLowerCase().includes(searchValue.toLowerCase())
