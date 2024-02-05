@@ -1,22 +1,14 @@
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
+import { useCountryData } from "../hooks/useCountryData";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Country() {
   const [searchValue, setSearchValue] = useState("");
-  const [countries, setCountries] = useState([]);
 
   const [sortByContinent, setSortByContinent] = useState("");
 
-  const { isLoading, isError } = useQuery({
-    queryKey: ["country-data"],
-    queryFn: async () => {
-      const response = await axios.get("https://restcountries.com/v3.1/all");
-      setCountries(response.data);
-      return response.data;
-    },
-  });
+  const { data, isLoading, isError } = useCountryData();
+  const countries = data;
 
   if (isError) {
     return <h1>Sorry,data can not be loaded at this time</h1>;
@@ -85,16 +77,18 @@ export default function Country() {
           <div className="countryDisplay">
             {filterCountries.map((country) => (
               <div key={country.cca2}>
-                <img
-                  src={country.flags.png}
-                  alt={country.flags.alt}
-                  height={200}
-                  width={300}
-                />
-                <h3>{country.name.common}</h3>
-                <p>{country.region}</p>
-                <p>{country.population}</p>
-                <p>{country.capital}</p>
+                <Link to={`/details/${country.cca2}`}>
+                  <img
+                    src={country.flags.png}
+                    alt={country.flags.alt}
+                    height={200}
+                    width={300}
+                  />
+                  <h3>{country.name.common}</h3>
+                  <p>{country.region}</p>
+                  <p>{country.population}</p>
+                  <p>{country.capital}</p>
+                </Link>
               </div>
             ))}
           </div>
@@ -104,16 +98,18 @@ export default function Country() {
           <div className="countryDisplay">
             {filterByAfrica.map((country) => (
               <div key={country.cca2}>
-                <img
-                  src={country.flags.png}
-                  alt={country.flags.alt}
-                  height={200}
-                  width={300}
-                />
-                <h3>{country.name.common}</h3>
-                <p>{country.region}</p>
-                <p>{country.population}</p>
-                <p>{country.capital}</p>
+                <Link to={`/details/${country.cca2}`}>
+                  <img
+                    src={country.flags.png}
+                    alt={country.flags.alt}
+                    height={200}
+                    width={300}
+                  />
+                  <h3>{country.name.common}</h3>
+                  <p>{country.region}</p>
+                  <p>{country.population}</p>
+                  <p>{country.capital}</p>
+                </Link>
               </div>
             ))}
           </div>
@@ -122,16 +118,18 @@ export default function Country() {
           <div className="countryDisplay">
             {filterByAmerica.map((country) => (
               <div key={country.cca2}>
-                <img
-                  src={country.flags.png}
-                  alt={country.flags.alt}
-                  height={200}
-                  width={300}
-                />
-                <h3>{country.name.common}</h3>
-                <p>{country.region}</p>
-                <p>{country.population}</p>
-                <p>{country.capital}</p>
+                <Link to={`/details/${country.cca2}`}>
+                  <img
+                    src={country.flags.png}
+                    alt={country.flags.alt}
+                    height={200}
+                    width={300}
+                  />
+                  <h3>{country.name.common}</h3>
+                  <p>{country.region}</p>
+                  <p>{country.population}</p>
+                  <p>{country.capital}</p>
+                </Link>
               </div>
             ))}
           </div>
@@ -140,16 +138,18 @@ export default function Country() {
           <div className="countryDisplay">
             {filterByAsia.map((country) => (
               <div key={country.cca2}>
-                <img
-                  src={country.flags.png}
-                  alt={country.flags.alt}
-                  height={200}
-                  width={300}
-                />
-                <h3>{country.name.common}</h3>
-                <p>{country.region}</p>
-                <p>{country.population}</p>
-                <p>{country.capital}</p>
+                <Link to={`/details/${country.cca2}`}>
+                  <img
+                    src={country.flags.png}
+                    alt={country.flags.alt}
+                    height={200}
+                    width={300}
+                  />
+                  <h3>{country.name.common}</h3>
+                  <p>{country.region}</p>
+                  <p>{country.population}</p>
+                  <p>{country.capital}</p>
+                </Link>
               </div>
             ))}
           </div>
@@ -158,16 +158,18 @@ export default function Country() {
           <div className="countryDisplay">
             {filterByEurope.map((country) => (
               <div key={country.cca2}>
-                <img
-                  src={country.flags.png}
-                  alt={country.flags.alt}
-                  height={200}
-                  width={300}
-                />
-                <h3>{country.name.common}</h3>
-                <p>{country.region}</p>
-                <p>{country.population}</p>
-                <p>{country.capital}</p>
+                <Link to={`/details/${country.cca2}`}>
+                  <img
+                    src={country.flags.png}
+                    alt={country.flags.alt}
+                    height={200}
+                    width={300}
+                  />
+                  <h3>{country.name.common}</h3>
+                  <p>{country.region}</p>
+                  <p>{country.population}</p>
+                  <p>{country.capital}</p>
+                </Link>
               </div>
             ))}
           </div>
@@ -176,16 +178,18 @@ export default function Country() {
           <div className="countryDisplay">
             {filterByOceania.map((country) => (
               <div key={country.cca2}>
-                <img
-                  src={country.flags.png}
-                  alt={country.flags.alt}
-                  height={200}
-                  width={300}
-                />
-                <h3>{country.name.common}</h3>
-                <p>{country.region}</p>
-                <p>{country.population}</p>
-                <p>{country.capital}</p>
+                <Link to={`/details/${country.cca2}`}>
+                  <img
+                    src={country.flags.png}
+                    alt={country.flags.alt}
+                    height={200}
+                    width={300}
+                  />
+                  <h3>{country.name.common}</h3>
+                  <p>{country.region}</p>
+                  <p>{country.population}</p>
+                  <p>{country.capital}</p>
+                </Link>
               </div>
             ))}
           </div>
