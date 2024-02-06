@@ -17,6 +17,13 @@ export default function CountryDetails() {
 
   const country = countries?.find((details) => details.cca2 === id);
 
+  // const borderName = () => {
+  //   return countries?.borders.map(
+  //     (border) => countries?.find((c) => c.cca3 === border).name
+  //   );
+  // };
+  // console.log(borderName());
+
   return (
     <>
       <div>
@@ -30,7 +37,7 @@ export default function CountryDetails() {
             />
             <h2>{country.name.common}</h2>
             <p>Region: {country.region}</p>
-            <p>Pouplation: {country.population}</p>
+            <p>Population: {country.population}</p>
             <p>Capital: {country.capital}</p>
             <p>Top level domain : {country.tld}</p>
             {country.subregion && <p>Sub Region: {country.subregion}</p>}
