@@ -44,7 +44,7 @@ export default function CountryDetails() {
                 .map((currency) => currency.name)
                 .join(", ")}
             </p>
-            <h3>Border countries : {country.borders.join(",")}</h3>
+            {/* <h3>Border countries : {country.borders.join(",")}</h3> */}
           </>
         )}
       </div>
