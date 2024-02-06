@@ -29,9 +29,22 @@ export default function CountryDetails() {
               width={300}
             />
             <h3>{country.name.common}</h3>
-            <p>{country.region}</p>
-            <p>{country.population}</p>
-            <p>{country.capital}</p>
+            <p>Region: {country.region}</p>
+            <p>Pouplation: {country.population}</p>
+            <p>Capital: {country.capital}</p>
+            <p>Top level domain : {country.tld}</p>
+            {country.subregion && <p>Sub Region: {country.subregion}</p>}
+
+            {/* Object.values(country.languages) extracts an array of language names.
+            .join(", ") transforms the array into a comma-separated string for display.
+ */}
+            <p>Languages: {Object.values(country.languages).join(", ")}</p>
+            <p>
+              Currencies:{" "}
+              {Object.values(country.currencies)
+                .map((currency) => currency.name)
+                .join(", ")}
+            </p>
           </>
         )}
       </div>
