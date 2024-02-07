@@ -17,12 +17,9 @@ export default function CountryDetails() {
 
   const country = countries?.find((details) => details.cca2 === id);
 
-  // const borderName = () => {
-  //   return countries?.borders.map(
-  //     (border) => countries?.find((c) => c.cca3 === border).name
-  //   );
-  // };
-  // console.log(borderName());
+  const borders = country.borders?.map(
+    (border) => countries.find((c) => c.cca3 === border).name
+  );
 
   return (
     <>
@@ -41,6 +38,7 @@ export default function CountryDetails() {
             <p>Capital: {country.capital}</p>
             <p>Top level domain : {country.tld}</p>
             {country.subregion && <p>Sub Region: {country.subregion}</p>}
+
             {/* Object.values(country.languages) extracts an array of language names.
             .join(", ") transforms the array into a comma-separated string for display.
  */}
@@ -51,7 +49,9 @@ export default function CountryDetails() {
                 .map((currency) => currency.name)
                 .join(", ")}
             </p>
-            {/* <h3>Border countries : {country.borders.join(",")}</h3> */}
+            {borders && (
+              <h3>Borders:{borders?.map((c) => c.common).join(",")}</h3>
+            )}
           </>
         )}
       </div>
