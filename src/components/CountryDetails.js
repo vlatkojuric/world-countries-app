@@ -38,7 +38,6 @@ export default function CountryDetails() {
             <p>Capital: {country.capital}</p>
             <p>Top level domain : {country.tld}</p>
             {country.subregion && <p>Sub Region: {country.subregion}</p>}
-
             {/* Object.values(country.languages) extracts an array of language names.
             .join(", ") transforms the array into a comma-separated string for display.
  */}
