@@ -49,7 +49,9 @@ export default function CountryDetails() {
                 .join(", ")}
             </p>
             {borders && (
-              <h3>Borders:{borders?.map((c) => c.common).join(",")}</h3>
+              <h3>
+                Border Countries: {borders?.map((c) => c.common).join(" , ")}
+              </h3>
             )}
           </>
         )}
