@@ -68,27 +68,32 @@ export default function Country() {
     <div>
       <div>
         <div className="inputSelectTop">
-          <input
-            type="text"
-            value={searchValue}
-            onChange={handleInputChange}
-            className="searchInput"
-            placeholder="Search for a country..."
-          />
-          <span className="searchIcon">{showSearchIcon && <SearchIcon />}</span>
-
-          <select
-            className="selectOption"
-            defaultValue={sortByContinent}
-            onChange={(event) => setSortByContinent(event.target.value)}
-          >
-            <option value="Filter by Region">Filter by Region</option>
-            <option value="Africa">Africa</option>
-            <option value="Americas">Americas</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-          </select>
+          <div className="inputSearchContainer">
+            <span className="searchIcon">
+              {showSearchIcon && <SearchIcon />}
+            </span>
+            <input
+              type="text"
+              value={searchValue}
+              onChange={handleInputChange}
+              className="searchInput"
+              placeholder="Search for a country..."
+            />
+          </div>
+          <div>
+            <select
+              className="selectOption"
+              defaultValue={sortByContinent}
+              onChange={(event) => setSortByContinent(event.target.value)}
+            >
+              <option value="Filter by Region">Filter by Region</option>
+              <option value="Africa">Africa</option>
+              <option value="Americas">Americas</option>
+              <option value="Asia">Asia</option>
+              <option value="Europe">Europe</option>
+              <option value="Oceania">Oceania</option>
+            </select>
+          </div>
         </div>
 
         {sortByContinent === "Filter by Region" && (
