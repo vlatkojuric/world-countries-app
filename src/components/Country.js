@@ -2,10 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Country() {
   const [searchValue, setSearchValue] = useState("");
   const [countries, setCountries] = useState([]);
+  const [showSearchIcon, setShowSearchIcon] = useState(true);
 
   const [sortByContinent, setSortByContinent] = useState("");
 
@@ -56,6 +58,12 @@ export default function Country() {
       country.name.common.toLowerCase().includes(searchValue.toLowerCase())
   );
 
+  function handleInputChange(event) {
+    setSearchValue(event.target.value);
+
+    setShowSearchIcon(event.target.value === "");
+  }
+
   return (
     <div>
       <div>
@@ -63,9 +71,11 @@ export default function Country() {
           <input
             type="text"
             value={searchValue}
-            onChange={(event) => setSearchValue(event.target.value)}
+            onChange={handleInputChange}
             className="searchInput"
+            placeholder="Search for a country..."
           />
+          <span className="searchIcon">{showSearchIcon && <SearchIcon />}</span>
 
           <select
             className="selectOption"

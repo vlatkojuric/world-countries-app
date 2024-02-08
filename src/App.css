@@ -9,11 +9,16 @@
   margin: 0 5% 0 5%;
 }
 
+input::placeholder {
+  padding-left: 30px;
+}
+
 .searchInput {
   margin-bottom: 1%;
   height: 30px;
   width: 25%;
   margin-left: 5%;
+  position: relative;
 }
 
 .selectOption {
@@ -23,4 +28,10 @@
 .inputSelectTop {
   display: flex;
   justify-content: space-between;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 100px;
+  top: 15px;
 }
