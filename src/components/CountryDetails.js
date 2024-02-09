@@ -57,7 +57,9 @@ export default function CountryDetails() {
         )}
       </div>
       <button>
-        <Link to="/"> Back</Link>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          Back
+        </Link>
       </button>
     </>
   );

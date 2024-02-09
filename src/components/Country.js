@@ -100,7 +100,10 @@ export default function Country() {
           <div className="countryDisplay">
             {filterCountries.map((country) => (
               <div key={country.cca2}>
-                <Link to={`/details/${country.cca2}`}>
+                <Link
+                  to={`/details/${country.cca2}`}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <img
                     src={country.flags.png}
                     alt={country.flags.alt}
@@ -121,7 +124,10 @@ export default function Country() {
           <div className="countryDisplay">
             {filterByAfrica.map((country) => (
               <div key={country.cca2}>
-                <Link to={`/details/${country.cca2}`}>
+                <Link
+                  to={`/details/${country.cca2}`}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <img
                     src={country.flags.png}
                     alt={country.flags.alt}
@@ -141,7 +147,10 @@ export default function Country() {
           <div className="countryDisplay">
             {filterByAmerica.map((country) => (
               <div key={country.cca2}>
-                <Link to={`/details/${country.cca2}`}>
+                <Link
+                  to={`/details/${country.cca2}`}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <img
                     src={country.flags.png}
                     alt={country.flags.alt}
@@ -161,7 +170,10 @@ export default function Country() {
           <div className="countryDisplay">
             {filterByAsia.map((country) => (
               <div key={country.cca2}>
-                <Link to={`/details/${country.cca2}`}>
+                <Link
+                  to={`/details/${country.cca2}`}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <img
                     src={country.flags.png}
                     alt={country.flags.alt}
@@ -181,7 +193,10 @@ export default function Country() {
           <div className="countryDisplay">
             {filterByEurope.map((country) => (
               <div key={country.cca2}>
-                <Link to={`/details/${country.cca2}`}>
+                <Link
+                  to={`/details/${country.cca2}`}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <img
                     src={country.flags.png}
                     alt={country.flags.alt}
@@ -201,7 +216,10 @@ export default function Country() {
           <div className="countryDisplay">
             {filterByOceania.map((country) => (
               <div key={country.cca2}>
-                <Link to={`/details/${country.cca2}`}>
+                <Link
+                  to={`/details/${country.cca2}`}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
                   <img
                     src={country.flags.png}
                     alt={country.flags.alt}
@@ -223,7 +241,10 @@ export default function Country() {
         <div className="countryDisplay">
           {filterCountries?.map((country) => (
             <div key={country.cca2}>
-              <Link to={`/details/${country.cca2}`}>
+              <Link
+                to={`/details/${country.cca2}`}
+                style={{ textDecoration: "none", color: "black" }}
+              >
                 <img
                   src={country.flags.png}
                   alt={country.flags.alt}
