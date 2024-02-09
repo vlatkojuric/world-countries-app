@@ -34,7 +34,7 @@ export default function CountryDetails() {
             />
             <h2>{country.name.common}</h2>
             <p>Region: {country.region}</p>
-            <p>Population: {country.population}</p>
+            <p>Population: {country.population.toLocaleString()}</p>
             <p>Capital: {country.capital}</p>
             <p>Top level domain : {country.tld}</p>
             {country.subregion && <p>Sub Region: {country.subregion}</p>}

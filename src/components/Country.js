@@ -112,7 +112,7 @@ export default function Country() {
                   />
                   <div className="countryInfoMain">
                     <h3>{country.name.common}</h3>
-                    <p>Population: {country.population}</p>
+                    <p>Population: {country.population.toLocaleString()}</p>
                     <p>Region: {country.region}</p>
                     <p>Capital: {country.capital}</p>
                   </div>
@@ -138,7 +138,7 @@ export default function Country() {
                   />
                   <div className="countryInfoMain">
                     <h3>{country.name.common}</h3>
-                    <p>Population: {country.population}</p>
+                    <p>Population: {country.population.toLocaleString()}</p>
                     <p>Region: {country.region}</p>
                     <p>Capital: {country.capital}</p>
                   </div>
@@ -163,7 +163,7 @@ export default function Country() {
                   />
                   <div className="countryInfoMain">
                     <h3>{country.name.common}</h3>
-                    <p>Population: {country.population}</p>
+                    <p>Population: {country.population.toLocaleString()}</p>
                     <p>Region: {country.region}</p>
                     <p>Capital: {country.capital}</p>
                   </div>
@@ -188,7 +188,7 @@ export default function Country() {
                   />
                   <div className="countryInfoMain">
                     <h3>{country.name.common}</h3>
-                    <p>Population: {country.population}</p>
+                    <p>Population: {country.population.toLocaleString()}</p>
                     <p>Region: {country.region}</p>
                     <p>Capital: {country.capital}</p>
                   </div>
@@ -213,7 +213,7 @@ export default function Country() {
                   />
                   <div className="countryInfoMain">
                     <h3>{country.name.common}</h3>
-                    <p>Population: {country.population}</p>
+                    <p>Population: {country.population.toLocaleString()}</p>
                     <p>Region: {country.region}</p>
                     <p>Capital: {country.capital}</p>
                   </div>
@@ -238,7 +238,7 @@ export default function Country() {
                   />
                   <div className="countryInfoMain">
                     <h3>{country.name.common}</h3>
-                    <p>Population: {country.population}</p>
+                    <p>Population: {country.population.toLocaleString()}</p>
                     <p>Region: {country.region}</p>
                     <p>Capital: {country.capital}</p>
                   </div>
@@ -268,7 +268,7 @@ export default function Country() {
 
                 <div className="countryInfoMain">
                   <h3>{country.name.common}</h3>
-                  <p>Population: {country.population}</p>
+                  <p>Population: {country.population.toLocaleString()}</p>
                   <p>Region: {country.region}</p>
                   <p>Capital: {country.capital}</p>
                 </div>
