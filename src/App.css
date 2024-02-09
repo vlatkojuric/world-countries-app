@@ -84,6 +84,10 @@ this so it does not look to ugly on the mobile device */
   padding: 20px 0px 20px 0px;
 }
 
+.countryDetailsContainer {
+  margin-top: 80px;
+}
+
 @media screen and (max-width: 700px) {
   .countryDisplay {
     display: flex;
