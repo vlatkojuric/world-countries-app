@@ -11,6 +11,10 @@ body {
   background-color: hsl(0, 0%, 98%);
 }
 
+h3 {
+  margin-bottom: 15px;
+}
+
 .countryDisplay {
   display: flex;
   flex-wrap: wrap;

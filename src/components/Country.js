@@ -99,7 +99,7 @@ export default function Country() {
         {sortByContinent === "Filter by Region" && (
           <div className="countryDisplay">
             {filterCountries.map((country) => (
-              <div key={country.cca2}>
+              <div key={country.cca2} className="countryCard">
                 <Link
                   to={`/details/${country.cca2}`}
                   style={{ textDecoration: "none", color: "black" }}
@@ -110,10 +110,12 @@ export default function Country() {
                     height={200}
                     width={300}
                   />
-                  <h3>{country.name.common}</h3>
-                  <p>{country.region}</p>
-                  <p>{country.population}</p>
-                  <p>{country.capital}</p>
+                  <div className="countryInfoMain">
+                    <h3>{country.name.common}</h3>
+                    <p>Population: {country.population}</p>
+                    <p>Region: {country.region}</p>
+                    <p>Capital: {country.capital}</p>
+                  </div>
                 </Link>
               </div>
             ))}
@@ -123,7 +125,7 @@ export default function Country() {
         {sortByContinent === "Africa" && (
           <div className="countryDisplay">
             {filterByAfrica.map((country) => (
-              <div key={country.cca2}>
+              <div key={country.cca2} className="countryCard">
                 <Link
                   to={`/details/${country.cca2}`}
                   style={{ textDecoration: "none", color: "black" }}
@@ -134,10 +136,12 @@ export default function Country() {
                     height={200}
                     width={300}
                   />
-                  <h3>{country.name.common}</h3>
-                  <p>{country.region}</p>
-                  <p>{country.population}</p>
-                  <p>{country.capital}</p>
+                  <div className="countryInfoMain">
+                    <h3>{country.name.common}</h3>
+                    <p>Population: {country.population}</p>
+                    <p>Region: {country.region}</p>
+                    <p>Capital: {country.capital}</p>
+                  </div>
                 </Link>
               </div>
             ))}
@@ -146,7 +150,7 @@ export default function Country() {
         {sortByContinent === "Americas" && (
           <div className="countryDisplay">
             {filterByAmerica.map((country) => (
-              <div key={country.cca2}>
+              <div key={country.cca2} className="countryCard">
                 <Link
                   to={`/details/${country.cca2}`}
                   style={{ textDecoration: "none", color: "black" }}
@@ -157,10 +161,12 @@ export default function Country() {
                     height={200}
                     width={300}
                   />
-                  <h3>{country.name.common}</h3>
-                  <p>{country.region}</p>
-                  <p>{country.population}</p>
-                  <p>{country.capital}</p>
+                  <div className="countryInfoMain">
+                    <h3>{country.name.common}</h3>
+                    <p>Population: {country.population}</p>
+                    <p>Region: {country.region}</p>
+                    <p>Capital: {country.capital}</p>
+                  </div>
                 </Link>
               </div>
             ))}
@@ -169,7 +175,7 @@ export default function Country() {
         {sortByContinent === "Asia" && (
           <div className="countryDisplay">
             {filterByAsia.map((country) => (
-              <div key={country.cca2}>
+              <div key={country.cca2} className="countryCard">
                 <Link
                   to={`/details/${country.cca2}`}
                   style={{ textDecoration: "none", color: "black" }}
@@ -180,10 +186,12 @@ export default function Country() {
                     height={200}
                     width={300}
                   />
-                  <h3>{country.name.common}</h3>
-                  <p>{country.region}</p>
-                  <p>{country.population}</p>
-                  <p>{country.capital}</p>
+                  <div className="countryInfoMain">
+                    <h3>{country.name.common}</h3>
+                    <p>Population: {country.population}</p>
+                    <p>Region: {country.region}</p>
+                    <p>Capital: {country.capital}</p>
+                  </div>
                 </Link>
               </div>
             ))}
@@ -192,7 +200,7 @@ export default function Country() {
         {sortByContinent === "Europe" && (
           <div className="countryDisplay">
             {filterByEurope.map((country) => (
-              <div key={country.cca2}>
+              <div key={country.cca2} className="countryCard">
                 <Link
                   to={`/details/${country.cca2}`}
                   style={{ textDecoration: "none", color: "black" }}
@@ -203,10 +211,12 @@ export default function Country() {
                     height={200}
                     width={300}
                   />
-                  <h3>{country.name.common}</h3>
-                  <p>{country.region}</p>
-                  <p>{country.population}</p>
-                  <p>{country.capital}</p>
+                  <div className="countryInfoMain">
+                    <h3>{country.name.common}</h3>
+                    <p>Population: {country.population}</p>
+                    <p>Region: {country.region}</p>
+                    <p>Capital: {country.capital}</p>
+                  </div>
                 </Link>
               </div>
             ))}
@@ -215,7 +225,7 @@ export default function Country() {
         {sortByContinent === "Oceania" && (
           <div className="countryDisplay">
             {filterByOceania.map((country) => (
-              <div key={country.cca2}>
+              <div key={country.cca2} className="countryCard">
                 <Link
                   to={`/details/${country.cca2}`}
                   style={{ textDecoration: "none", color: "black" }}
@@ -226,10 +236,12 @@ export default function Country() {
                     height={200}
                     width={300}
                   />
-                  <h3>{country.name.common}</h3>
-                  <p>{country.region}</p>
-                  <p>{country.population}</p>
-                  <p>{country.capital}</p>
+                  <div className="countryInfoMain">
+                    <h3>{country.name.common}</h3>
+                    <p>Population: {country.population}</p>
+                    <p>Region: {country.region}</p>
+                    <p>Capital: {country.capital}</p>
+                  </div>
                 </Link>
               </div>
             ))}
@@ -256,9 +268,9 @@ export default function Country() {
 
                 <div className="countryInfoMain">
                   <h3>{country.name.common}</h3>
-                  <p>{country.region}</p>
-                  <p>{country.population}</p>
-                  <p>{country.capital}</p>
+                  <p>Population: {country.population}</p>
+                  <p>Region: {country.region}</p>
+                  <p>Capital: {country.capital}</p>
                 </div>
               </Link>
             </div>
