@@ -240,21 +240,26 @@ export default function Country() {
       {!sortByContinent && (
         <div className="countryDisplay">
           {filterCountries?.map((country) => (
-            <div key={country.cca2}>
+            <div key={country.cca2} className="countryCard">
               <Link
                 to={`/details/${country.cca2}`}
                 style={{ textDecoration: "none", color: "black" }}
               >
-                <img
-                  src={country.flags.png}
-                  alt={country.flags.alt}
-                  height={200}
-                  width={300}
-                />
-                <h3>{country.name.common}</h3>
-                <p>{country.region}</p>
-                <p>{country.population}</p>
-                <p>{country.capital}</p>
+                <div>
+                  <img
+                    src={country.flags.png}
+                    alt={country.flags.alt}
+                    height={200}
+                    width={300}
+                  />
+                </div>
+
+                <div className="countryInfoMain">
+                  <h3>{country.name.common}</h3>
+                  <p>{country.region}</p>
+                  <p>{country.population}</p>
+                  <p>{country.capital}</p>
+                </div>
               </Link>
             </div>
           ))}
