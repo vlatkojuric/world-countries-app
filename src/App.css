@@ -13,6 +13,31 @@ body {
 
 h3 {
   margin-bottom: 15px;
+  font-size: 22px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  padding: 4px 30px;
+  margin-top: 160px;
+  margin-bottom: 70px;
+  margin-left: 95px;
+  background-color: white;
+  border: none;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.8);
+  /* position: absolute;
+  top: 14%;
+  left: 9%; */
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.arrowBack {
+  font-size: 20px;
+  margin-right: 5px;
 }
 
 .countryDisplay {
@@ -47,6 +72,7 @@ this so it does not look to ugly on the mobile device */
 
 .searchIcon {
   margin-top: 7px;
+  background-color: white;
 }
 
 .inputSelectTop {
@@ -85,7 +111,44 @@ this so it does not look to ugly on the mobile device */
 }
 
 .countryDetailsContainer {
-  margin-top: 80px;
+  display: flex;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  margin-left: 140px;
+  /* gap: 1.5rem; */
+  /* margin-top: 20%; */
+}
+
+.countryDetailsContainer p {
+  margin-bottom: 8px;
+}
+
+.countryDetailsContainer h2 {
+  margin-bottom: 20px;
+}
+
+.countryDetailsInfo1 {
+  /* margin-left: -150px; */
+  text-align: left;
+  margin-left: 120px;
+}
+
+.countryDetailsInfo2 {
+  /* margin-right: 20px; */
+  text-align: left;
+  margin-left: 120px;
+}
+
+.countryDetailsImage {
+  margin-left: -50px;
+  width: 400px;
+  height: 300px;
+  border-radius: 6px;
+  /* position: relative; */
+}
+
+.borderCountries {
+  margin-top: 50px;
 }
 
 @media screen and (max-width: 700px) {

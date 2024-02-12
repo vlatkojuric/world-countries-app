@@ -23,45 +23,74 @@ export default function CountryDetails() {
 
   return (
     <>
+      <div className="buttonPosition">
+        <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+          <button>
+            <span className="arrowBack">⬅</span> Back
+          </button>
+        </Link>
+      </div>
+
       <div className="countryDetailsContainer">
         {country && (
           <>
             <img
+              className="countryDetailsImage"
               src={country.flags.png}
               alt={country.flags.alt}
               height={200}
               width={300}
             />
-            <h2>{country.name.common}</h2>
-            <p>Region: {country.region}</p>
-            <p>Population: {country.population.toLocaleString()}</p>
-            <p>Capital: {country.capital}</p>
-            <p>Top level domain : {country.tld}</p>
-            {country.subregion && <p>Sub Region: {country.subregion}</p>}
-            {/* Object.values(country.languages) extracts an array of language names.
+            <div className="countryDetailsInfo1">
+              <h2>{country.name.common}</h2>
+              <p>
+                {" "}
+                <strong>Population:</strong>{" "}
+                {country.population.toLocaleString()}
+              </p>
+              <p>
+                <strong>Region:</strong> {country.region}
+              </p>
+              {country.subregion && (
+                <p>
+                  <strong>Sub Region:</strong> {country.subregion}
+                </p>
+              )}
+              <p>
+                <strong>Capital:</strong> {country.capital}
+              </p>
+              <div className="borderCountries">
+                {borders && (
+                  <span>
+                    <strong>Border Countries:</strong>{" "}
+                    <p>{borders?.map((c) => c.common).join(" , ")}</p>
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <div className="countryDetailsInfo2">
+              <p>
+                <strong>Top Level Domain:</strong> {country.tld}
+              </p>
+              {/* Object.values(country.languages) extracts an array of language names.
             .join(", ") transforms the array into a comma-separated string for display.
  */}
-            <p>Languages: {Object.values(country.languages).join(", ")}</p>
-            <p>
-              Currencies:{" "}
-              {Object.values(country.currencies)
-                .map((currency) => currency.name)
-                .join(", ")}
-            </p>
-            {borders && (
-              <span>
-                Border Countries:{" "}
-                <strong> {borders?.map((c) => c.common).join(" , ")}</strong>
-              </span>
-            )}
+
+              <p>
+                <strong>Currencies:</strong>{" "}
+                {Object.values(country.currencies)
+                  .map((currency) => currency.name)
+                  .join(", ")}
+              </p>
+              <p>
+                <strong>Languages:</strong>{" "}
+                {Object.values(country.languages).join(", ")}
+              </p>
+            </div>
           </>
         )}
       </div>
-      <button>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          Back
-        </Link>
-      </button>
     </>
   );
 }
