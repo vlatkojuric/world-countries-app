@@ -43,6 +43,8 @@ export default function CountryDetails() {
             />
             <div className="countryDetailsInfo1">
               <h2>{country.name.common}</h2>
+              <div></div>
+
               <p>
                 {" "}
                 <strong>Population:</strong>{" "}
