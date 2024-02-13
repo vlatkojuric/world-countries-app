@@ -197,7 +197,7 @@ this so it does not look to ugly on the mobile device */
 
   button {
     margin-top: 20px;
-    margin-left: 10%;
+    margin-left: 12%;
     margin-bottom: 60px;
     display: flex;
     align-items: center;
@@ -217,7 +217,7 @@ this so it does not look to ugly on the mobile device */
 
   .countryDetailsInfo1 {
     text-align: left;
-    margin-left: 10%;
+    margin-left: 12%;
   }
   .countryDetailsInfo1 h2 {
     margin-top: 40px;
@@ -225,7 +225,7 @@ this so it does not look to ugly on the mobile device */
 
   .countryDetailsInfo2 {
     margin-top: 40px;
-    margin-left: 10%;
+    margin-left: 12%;
     order: 1;
   }
   .borderCountries {
