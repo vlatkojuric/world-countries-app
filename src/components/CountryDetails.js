@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useCountryData } from "../hooks/useCountryData";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function CountryDetails() {
   let { id } = useParams();
@@ -28,7 +29,10 @@ export default function CountryDetails() {
       <div className="buttonPosition">
         <Link to="/" style={{ textDecoration: "none", color: "black" }}>
           <button>
-            <span className="arrowBack">⬅</span> Back
+            <span className="arrowBack">
+              <FaArrowLeft />
+            </span>{" "}
+            Back
           </button>
         </Link>
       </div>
