@@ -139,6 +139,8 @@ input::placeholder {
 .countryDetailsImage {
   margin-left: -50px;
   border-radius: 6px;
+  width: 600px;
+  height: 400px;
 }
 
 .borderCountries {
