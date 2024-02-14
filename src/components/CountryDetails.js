@@ -22,8 +22,6 @@ export default function CountryDetails() {
     (border) => countries.find((c) => c.cca3 === border).name
   );
 
-  // const isSmallScreen = window.matchMedia("(max-width: 700px)").matches;
-
   return (
     <>
       <div className="buttonPosition">
@@ -47,6 +45,7 @@ export default function CountryDetails() {
               height={200}
               width={300}
             />
+
             <div className="countryDetailsInfo1">
               <h2>{country.name.common}</h2>
               <div></div>

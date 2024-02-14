@@ -8,6 +8,8 @@
   box-sizing: border-box;
 }
 body {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
   background-color: hsl(0, 0%, 98%);
 }
 
@@ -27,9 +29,6 @@ button {
   border: none;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.8);
   border-radius: 5px;
-  /* position: absolute;
-  top: 14%;
-  left: 9%; */
 }
 
 button:hover {
@@ -39,6 +38,7 @@ button:hover {
 .arrowBack {
   font-size: 20px;
   margin-right: 5px;
+  margin-top: 2px;
 }
 
 .countryDisplay {
@@ -53,8 +53,6 @@ input::placeholder {
   padding-left: 30px;
 }
 
-/* later change this property of width when you start to apply mobile desing,it stays for now like 
-this so it does not look to ugly on the mobile device */
 .searchInput {
   border: none;
   outline: none;
@@ -87,7 +85,7 @@ this so it does not look to ugly on the mobile device */
   display: flex;
   align-items: center;
   box-shadow: 0px 13px 10px 0px rgba(0, 0, 0, 0.1);
-
+  background-color: white;
   width: 400px;
 }
 
@@ -108,16 +106,15 @@ this so it does not look to ugly on the mobile device */
 
 .countryInfoMain {
   background-color: hsl(0, 0%, 100%);
+  width: 100%;
+  height: 100%;
   padding: 20px 0px 20px 0px;
 }
 
 .countryDetailsContainer {
   display: flex;
-  /* justify-content: space-evenly; */
   align-items: center;
   margin-left: 140px;
-  /* gap: 1.5rem; */
-  /* margin-top: 20%; */
 }
 
 .countryDetailsContainer p {
@@ -129,13 +126,11 @@ this so it does not look to ugly on the mobile device */
 }
 
 .countryDetailsInfo1 {
-  /* margin-left: -150px; */
   text-align: left;
   margin-left: 120px;
 }
 
 .countryDetailsInfo2 {
-  /* margin-right: 20px; */
   text-align: left;
   margin-left: 120px;
   margin-top: -64px;
@@ -143,10 +138,7 @@ this so it does not look to ugly on the mobile device */
 
 .countryDetailsImage {
   margin-left: -50px;
-  width: 400px;
-  height: 300px;
   border-radius: 6px;
-  /* position: relative; */
 }
 
 .borderCountries {
@@ -155,6 +147,10 @@ this so it does not look to ugly on the mobile device */
 
 /* here starts the mobile view css */
 @media screen and (max-width: 700px) {
+  body {
+    background-color: hsl(0, 0%, 98%);
+  }
+
   .countryDisplay {
     display: flex;
     flex-wrap: wrap;
